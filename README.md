@@ -1,27 +1,75 @@
-# Islamic
+# Binary Classification with RNN
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.9.
+This repository contains code for a binary classification task using a Recurrent Neural Network (RNN), Long Short-Term Memory (LSTM) and Transformer to determine the correctness of answers based on given questions and corresponding answers in the dataset.
 
-## Development server
+## Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The code in this repository encompasses a comprehensive pipeline:
 
-## Code scaffolding
+- **Data Loading and Exploration**: Loads the dataset (`data.csv`) containing columns: `Question_id`, `Question`, `Answer`, and `score`. Provides an overview of the dataset statistics, distributions, and missing values.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Text Preprocessing and Feature Engineering**: Employs a robust text preprocessing pipeline including tokenization, removal of Arabic diacritics, punctuations, stopwords, and lemmatization. Conducts word frequency analysis and generates TF-IDF, Word2Vec, and FastText embeddings for feature representation.
 
-## Build
+- **Model Building and Training**: Implements an architecture for binary classification. Evaluates and fine-tunes the model using training and validation sets.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Evaluation and Prediction**: Assesses model performance on test data and showcases how to make predictions.
 
-## Running unit tests
+## Requirements
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Ensure you have the following installed:
 
-## Running end-to-end tests
+- Python 3.x
+- Libraries specified in `requirements.txt`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Installation
 
-## Further help
+1. Clone the repository:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+   ```bash
+   git clone https://github.com/AARABYasmine/islam_Qst.git
+   cd islam_Qst```
+   
+2. Install dependencies:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+    
+## Usage
+
+1. Ensure the dataset (`data.csv`) is placed in the appropriate directory.
+
+2. Run the main script:
+
+    ```bash
+    python -m flask run
+    ```
+    
+3. Modify hyperparameters, experiment with different models, or adjust functionalities as required.
+
+# Project Structure
+
+- `data.csv`: Dataset containing Question_id, Question, Answer, and score columns.
+- `main.py`: Main script for data loading, preprocessing, modeling, training, and evaluation.
+- `models.py`: Holds classes for RNN, LSTM and Transformer models.
+- `utils.py`: Utility functions for text preprocessing, feature engineering, and evaluation.
+
+# Results
+
+- The RNN model achieved an accuracy of 90.62% on the test set.
+- Additionally, an LSTM model obtained an accuracy of 87.50% on the same test set.
+- Transformer model obtained an accuracy of % on the same test set.
+
+# Notes
+
+- `nlp_pipeline` function streamlines comprehensive text preprocessing steps, ensuring high-quality data for modeling.
+- Features TF-IDF, Word2Vec, and FastText embeddings, offering diverse representations for model learning.
+- The repository provides flexibility to adjust model architectures, hyperparameters, and experiment with different embedding techniques.
+
+# Contribution Guidelines
+
+Feel free to contribute by:
+
+- Improving existing functionalities
+- Adding new features or models
+- Enhancing documentation or code readability
