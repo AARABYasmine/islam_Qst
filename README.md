@@ -27,7 +27,8 @@ Ensure you have the following installed:
 
    ```bash
    git clone https://github.com/AARABYasmine/islam_Qst.git
-   cd islam_Qst```
+   cd islam_Qst
+   ```
    
 2. Install dependencies:
 
